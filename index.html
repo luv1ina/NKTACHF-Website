@@ -105,6 +105,42 @@
   }
   @keyframes letterUp{ to{opacity:1; transform:translateY(0);} }
 
+  /* ---------- TOP MOTTO BANNER ---------- */
+  .top-motto-bar{
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px 16px;
+    border-bottom:2px solid var(--gold);
+    position:relative;
+    z-index:102;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    letter-spacing:0.06em;
+  }
+  .top-motto-bar .motto-tag{
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Permanent Marker', cursive;
+    padding:3px 10px;
+    border-radius:4px;
+    transform:rotate(-2deg);
+    font-size:0.75rem;
+    box-shadow:2px 2px 0px rgba(255,255,255,0.2);
+  }
+  .top-motto-bar .motto-text{
+    color:var(--gold);
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.04em;
+    text-shadow:0 0 10px rgba(255,214,51,0.35);
+  }
+
   /* ---------- SCRAPBOOK SYSTEM ---------- */
   .marker{font-family:'Permanent Marker', cursive; font-weight:400;}
   .signature-font{font-family:'Caveat', cursive; font-weight:700;}
@@ -149,8 +185,8 @@
 
   /* ---------- NAV ---------- */
   header{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    padding:20px 0;
+    position:sticky; top:0; left:0; right:0; z-index:100;
+    padding:18px 0;
     transition:background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
     border-bottom:1px solid transparent;
   }
@@ -194,9 +230,9 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:100vh;
+    min-height:calc(100vh - 42px);
     display:flex; flex-direction:column; justify-content:center;
-    padding-top:120px; padding-bottom:60px;
+    padding-top:60px; padding-bottom:60px;
     position:relative;
     background:
       radial-gradient(ellipse at 85% 15%, rgba(255,214,51,0.35), transparent 55%),
@@ -633,6 +669,10 @@
     .navlinks.open{transform:translateX(0);}
     .navtoggle{display:flex;}
   }
+  @media (max-width:600px){
+    .top-motto-bar{font-size:0.7rem; padding:8px 12px; flex-wrap:wrap;}
+    .top-motto-bar .motto-text{font-size:0.9rem;}
+  }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
   }
@@ -642,6 +682,15 @@
 
 <div class="loader" id="loader">
   <div class="loader-text" id="loaderText"></div>
+</div>
+
+<!-- ACCENT TOP MOTTO BANNER -->
+<div class="top-motto-bar">
+  <span class="motto-tag">OUR MOTTO</span>
+  <span>✦</span>
+  <span class="motto-text">#t3lm_chark_3ti_9ima</span>
+  <span>✦</span>
+  <span class="marker" style="color:var(--platinum); font-size:0.82rem;">learn · share · give value</span>
 </div>
 
 <div class="grain"></div>
